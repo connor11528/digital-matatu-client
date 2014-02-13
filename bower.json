@@ -1,0 +1,25 @@
+{
+  "name": "flashcast-jquery",
+  "version": "0.0.1",
+  "homepage": "github.com/jasonshark/flashcast-jquery",
+  "authors": [
+    "Connor James Leech <connorleech@gmail.com>"
+  ],
+  "description": "map nairobi matatu routes",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "app/components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.0",
+    "font-awesome": "~3.1.1",
+    "d3": "~3.0",
+    "bootstrap": "~3.1.0"
+  }
+}

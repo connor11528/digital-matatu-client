@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Flashcast - Maps</title>
+	
+	<link rel='stylesheet' href='css/bootstrap.css'>
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	
+	<div id='mapLocation'></div>
+	<h2>Routes</h2>
+	<table class='table' id='routes'>
+		<tr>
+			<th>Description</th>
+			<th>Coordinates</th>
+			<th>Route number</th>
+			<th>Color</th>
+		</tr>
+	</table>
+
+<!-- Include Google Maps API -->
+<script src='//maps.googleapis.com/maps/api/js?sensor=false'></script>
+
+<!-- bower:js -->
+<script src="bower_components/jquery/jquery.js"></script>
+<script src="bower_components/d3/d3.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+<!-- endbower -->
+
+
+<!-- jQuery table layout -->
+<script src='js/authToken.js'></script>
+<script src='js/makeMap.js'></script>
+<script src='js/loadRoutes.js'></script>
+</body>
+</html>
