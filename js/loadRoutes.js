@@ -1,4 +1,5 @@
 var $routes = $('#routes').hide();
+var busRoutes = [];
 
 // on load
 $(function(){
@@ -33,7 +34,7 @@ $(function(){
 		// fade out spinner, fade in <ul>
         $loading.fadeOut('slow');
         $routes.fadeIn(400);  
-        console.log($routes);
+        window.busRoutes = busRoutes;
     });
     
 	// get data
@@ -52,7 +53,6 @@ $(function(){
 // callback function to display routes
 function displayData(data){
 	var dataObj = $.parseJSON(data),
-		busRoutes = [],
 		routes = dataObj.routes;	// array of objects
 	
 	// loop over each route object	
@@ -77,7 +77,7 @@ function displayData(data){
 		var output = Mustache.render(
 			'<tr>'
 			+ '<td>'
-				+ '<a href="route.html">{{descriptor}}</a>'
+				+ '<a href="route.html?name={{name}}">{{descriptor}}</a>'
 			+ '</td>'
 			+ '<td>{{name}}</td>'
 			+ '<td>{{start.lat}}, {{start.lon}}</td>'
@@ -91,9 +91,8 @@ function displayData(data){
 		$routes.append(output);
 	});
 	
-	console.log(busRoutes);		// array of 35 route objects
+	// console.log(busRoutes);		// array of 35 route objects
 }
-
 
 // changes mustache delimeters
 //~ {{=<% %>=}}

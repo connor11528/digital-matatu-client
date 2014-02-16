@@ -11,22 +11,19 @@
 	
 </head>
 <body>
-		
-	<h2 class='text-center'>Routes</h2>
-	<table class='table' id='routes'>
-		<tr>
-			<th>Description</th>
-			<th>Route number</th>
-			<th>Start</th>
-			<th>End</th>
-			<th>Color</th>
-			<th>Waypoints</th>
-		</tr>
-	</table>
-	
+
+<h2 class='text-center'>Route Map</h2>
+<div class='container'>
 	<div class='row'>
 		<div id='loading' class='col-md-4 col-md-offset-4'></div>
 	</div>
+	
+	<div class='row' id='route-info'>
+	</div>
+	
+	<div id='map-canvas'></div>
+</div>
+	
 
 <!-- bower:js -->
 <script src="bower_components/jquery/jquery.js"></script>
@@ -41,5 +38,7 @@
 <script src='https://maps.googleapis.com/maps/api/js?key=AIzaSyD2Io5vOGwBSmZbpEIpDADXxrwzLiid46g&sensor=false'></script>
 <script src='js/match_stages.js'></script>
 <script src='js/loadRoutes.js'></script>
+<script src='js/makeMap.js'></script>
+
 </body>
 </html>
