@@ -12,7 +12,6 @@
     "grunt-bower-install": "~0.8.0"
   },
   "dependencies": {
-    "gzippo": "~0.2.0",
     "express": "~3.4.8"
   }
 }

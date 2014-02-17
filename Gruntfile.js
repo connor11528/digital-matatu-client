@@ -62,7 +62,7 @@ module.exports = function(grunt) {
 		target: {
 		// Point to the files that should be updated when
 		// you run `grunt bower-install`
-		src: ['index.html'],
+		src: ['./public/index.html'],
 
 		// Optional:
 		// ---------
