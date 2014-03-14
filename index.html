@@ -3,43 +3,30 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Flashcast - Maps</title>
+	<title>bus routes jquery</title>
 	
 	<link rel='stylesheet' href='css/bootstrap.css'>
+	<link rel='stylesheet' href='css/bootswatch.journal.min.css'>
 	<link rel="stylesheet" href="css/style.css">
-	
-	
+	<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.css" />
+
+	<style>
+	#map { height: 500px; }
+	</style>
 </head>
 <body>
-		
-	<h2 class='text-center'>Routes</h2>
-	<table class='table' id='routes'>
-		<tr>
-			<th>Description</th>
-			<th>Route number</th>
-			<th>Start</th>
-			<th>End</th>
-			<th>Color</th>
-			<th>Waypoints</th>
-		</tr>
-	</table>
-	
-	<div class='row'>
-		<div id='loading' class='col-md-4 col-md-offset-4'></div>
-	</div>
 
-<!-- bower:js -->
-<script src="bower_components/jquery/jquery.js"></script>
-<script src="bower_components/d3/d3.js"></script>
-<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
-<script src="bower_components/spin.js/spin.js"></script>
-<script src="bower_components/mustache/mustache.js"></script>
-<!-- endbower -->
+<div class="btn-group-vertical col-md-3" id='routes'></div>
 
-<!-- jQuery table layout -->
-<script src='js/credentials.js'></script>
-<script src='https://maps.googleapis.com/maps/api/js?key=AIzaSyD2Io5vOGwBSmZbpEIpDADXxrwzLiid46g&sensor=false'></script>
-<script src='js/match_stages.js'></script>
-<script src='js/loadRoutes.js'></script>
+<div class='col-md-9'>
+	<div id="map"></div>
+</div>
+
+
+<script src="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.js"></script>
+<script src='js/jquery-1.10.2.js'></script>
+<script src='js/bootstrap.js'></script>
+<script src='js/main.js'></script>
+
 </body>
 </html>

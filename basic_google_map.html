@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <style type="text/css">
+      html { height: 100% }
+      body { height: 100%; margin: 100px; padding: 0 }
+      #map-canvas { width: 600px; height: 400px; }
+    </style>
+    <script type="text/javascript"
+      src="https://maps.googleapis.com/maps/api/js?sensor=false">
+    </script>
+    <script type="text/javascript">
+      var nairobi = {
+        lat: -1.282836, 
+        lon:36.829201
+      };
+
+      function initialize() {
+        var mapOptions = {
+          center: new google.maps.LatLng(nairobi.lat, nairobi.lon),
+          zoom: 12
+        };
+        var map = new google.maps.Map(document.getElementById("map-canvas"),
+            mapOptions);
+      }
+      google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
+  </head>
+  <body>
+    <div id="map-canvas"/>
+  </body>
+</html>
