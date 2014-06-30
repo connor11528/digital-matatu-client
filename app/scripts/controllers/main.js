@@ -20,17 +20,38 @@ angular.module('digitalMatatuClientApp').controller('MainCtrl', ['$scope', '$roo
             }
         })
 
+        // no matches
         if($scope.matchingRoutes.length === 0){
             $scope.notFound = 'No routes match ' + routeNum
         }
     };
 
     $scope.drawRoute = function(route_id){
-        console.log(route_id)
+
+        var pathName = 'path' + route_id.toString();
+
         // draw the route on the map
+        Route.getCoords(route_id).then(function(shape){
+
+            // reformat coordinates array
+            var pathPoints = []
+            angular.forEach(shape.data, function(point){
+                pathPoints.push({ lat: point[1], lng: point[2] })
+            })
+
+            // configure the path data
+            var pathConfig = { allPaths: {} }
+            pathConfig['allPaths'][pathName] = {
+                color: '#008000',
+                weight: 8,
+                latlngs: pathPoints
+            };
+            angular.extend($scope, pathConfig)
+            console.log($scope.allPaths)
+        })
     }
 
-        // map setup
+    // map setup
     angular.extend($scope, {
         nairobi: {
             lat: -1.298815,

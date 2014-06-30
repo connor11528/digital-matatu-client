@@ -24,8 +24,11 @@
 </div>
 
 <div class='row'>
+  <!-- layers="layers" for Google map -->
   <leaflet center="nairobi" 
-    layers="layers" 
+    paths="allPaths"
     height="480px" 
     class="col-md-12"></leaflet>
 </div>
+
+<pre>{{ allPaths | json }}</pre>
