@@ -1,13 +1,26 @@
 <div class='row text-center'>
-  <form class='form-inline'><h2>Where does route 
-  <div class='form-group'>
-    <input class='form-control' type='text' ng-model='routeSearch'>
-  </div> go?</h2>
+  <form class='form-inline'>
+    <h2>Where does route 
+      <div class='form-group'>
+        <input class='form-control' 
+          type='text' 
+          ng-model='routeSearch' 
+          ng-enter="findMatches(routeSearch)"
+          placeholder='Enter a route number'>
+      </div> go?
+      <div class='btn btn-lg btn-primary' ng-click='findMatches(routeSearch)'>Show me</div>
+    </h2>
   </form>
 </div>
 
 <div class='row text-center'>
-  <h3>{{ answer }}</h3>
+  <h3 ng-show='matchingRoutes.length!=0'>{{ matchingRoutes.length }} routes found</h3>
+  <ul>
+    <li class='text text-danger' ng-if='notFound'><h4>{{ notFound }}</h4></li>
+    <li ng-if='!notFound' ng-repeat='match in matchingRoutes' ng-click='drawRoute(match.route_id)'>
+      <a><b>{{ match.short_name }}</b> - {{ match.description }}</a>
+    </li>
+  </ul>
 </div>
 
 <div class='row'>
